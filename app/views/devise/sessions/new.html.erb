@@ -1,15 +1,57 @@
-<h2>Log in</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<!--=== page-title-section start ===-->
+<section class="title-hero-bg login-cover-bg" data-stellar-background-ratio="0.2">
+  <div class="table-display">
+    <div class="login v-align text-center">
+      <div class="signup-box">
+        <ul id="signup-tabs" class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#login">Login</a></li>
+          <li><a href="/users/sign_up">Create Account</a></li>
+        </ul>
+        <div id="signup-content" class="tab-content">
+          <div id="login" class="tab-pane fade in active">
+            <!--=== Form ===-->
+            <!-- <form method="post" class="form login_type text-center"> -->
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form login_type text-center"}) do |f| %>
+              <%= f.input :email, required: false, autofocus: true, label: false, placeholder: 'Email', input_html: {class: 'mb-20'} %>
+              <%= f.input :password, required: false, label: false, placeholder: 'Password', input_html: {class: 'mb-20'} %>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+              <!--=== Username ===-->
+              <!-- <input type="text" name="username" class="form-control mb-20" placeholder="Username"> -->
+              <!--=== Password ===-->
+              <!-- <input type="password" name="password" class="form-control mb-20" placeholder="Password"> -->
+              <!--=== Submit ===-->
+              <!-- <button type="submit" name="login" class="btn btn-color btn-circle full-width">LOGIN</button> -->
+              <%= f.submit "Login", class: "btn btn-color btn-circle full-width" %>
+              <!--=== Signup Text ===-->
+              <h6 class="mt-20 gray-light"> FORGOT YOUR PASSWORD? </h6>
+              <!--=== Signup Button ===-->
+              <!-- <a href="#">SIGN UP <i class="fa fa-angle-double-right"></i> </a> -->
+              <br />
+              <%= link_to 'Reset password <i class="fa fa-angle-double-right"></i> '.html_safe, new_password_path(resource_name) %>
+            <% end %>
+            <!--=== End Form ===-->
+          </div>
+          <div id="account" class="tab-pane fade">
+            <!--=== Form ===-->
+            <form method="post" class="form login_type text-center">
+              <!--=== Your Name ===-->
+              <input type="text" name="yourname" class="form-control mb-20" placeholder="Your Name">
+              <!--=== Your Username ===-->
+              <input type="text" name="yourusername" class="form-control mb-20" placeholder="Your Username">
+              <!--=== Password ===-->
+              <input type="password" name="password" class="form-control mb-20" placeholder="Password">
+              <!--=== Reset Password ===-->
+              <input type="password" name="password" class="form-control mb-20" placeholder="Reset Password">
+              <!--=== Submit ===-->
+              <button type="submit" name="submit" class="btn btn-color btn-circle full-width">REGISTER NOW</button>
+            </form>
+
+            <!--=== End Form ===-->
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</section>
+<!--=== page-title-section end ===-->
