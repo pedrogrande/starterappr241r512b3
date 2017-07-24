@@ -38,6 +38,7 @@ gem 'devise', '~> 4.3.0'
 gem 'simple_form', '~> 3.5.0'
 
 # Bootstrap 3 and Fontawesome
+gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass', '~> 4.7.0'
 
