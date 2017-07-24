@@ -1,17 +1,31 @@
-<h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+<!--=== page-title-section start ===-->
+<section class="title-hero-bg login-cover-bg" data-stellar-background-ratio="0.2">
+  <div class="table-display">
+    <div class="login v-align text-center">
+      <div class="signup-box">
+        <ul id="signup-tabs" class="nav nav-tabs">
+          <li><a href="/users/sign_in">Login</a></li>
+          <li class="active"><a href="/users/sign_up">Create Account</a></li>
+        </ul>
+        <div id="signup-content" class="tab-content">
+          <div id="login" class="tab-pane fade in active">
+            <!--=== Form ===-->
+            <!-- <form method="post" class="form login_type text-center"> -->
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form login_type text-center"}) do |f| %>
+              <%= f.input :email, required: false, autofocus: true, label: false, placeholder: 'Email', input_html: {class: 'mb-20'} %>
+              <%= f.input :password, required: false, label: false, placeholder: 'Password', input_html: {class: 'mb-20'} %>
+
+              <%= f.submit "Register", class: "btn btn-color btn-circle full-width" %>
+
+            <% end %>
+            <!--=== End Form ===-->
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</section>
+<!--=== page-title-section end ===-->
