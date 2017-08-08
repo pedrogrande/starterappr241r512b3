@@ -36,11 +36,15 @@ gem 'jbuilder', '~> 2.5'
 # BASE GEMS FOR DIGITAL INTELLIGENCE WORKSHOPS
 gem 'devise', '~> 4.3.0'
 gem 'simple_form', '~> 3.5.0'
+gem 'country_select'
 
 # Bootstrap 3 and Fontawesome
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass', '~> 4.7.0'
+
+# GEOLOCATION
+# gem 'geocoder'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
