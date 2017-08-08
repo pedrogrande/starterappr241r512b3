@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'about', to: 'pages#about'
+
   root 'home#index'
 
   devise_for :users

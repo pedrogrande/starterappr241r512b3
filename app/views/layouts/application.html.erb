@@ -24,7 +24,15 @@
   <body>
     <div class="wrapper">
       <%= render 'interface/navbar' %>
-      <%= yield %>
+      <% if current_page?(root_path) %>
+        <%= yield %>
+      <% else %>
+      <section>
+        <div class="container">
+          <%= yield %>
+        </div>
+      </section>
+      <% end %>
       <%= render 'interface/footer' %>
       <!--=== GO TO TOP  ===-->
       <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
